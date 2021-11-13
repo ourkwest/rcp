@@ -12,22 +12,29 @@ This could enable:
 * Automatic time/cost estimation for recipes.
 * Automatic application of common substitutions.
 
-## TODO:
-1. build a recipe composition tool
-2. build a recipe rendering tool
-3. create a library of example recipes
+## Components
+1. A recipe composer - a text editing tool to facilitate creating conforming recipe documents.
+2. A recipe renderer - a web library for rendering conforming recipe documents.
+3. A library - of conforming recipe documents.
 
-### Composition
+### 1. Composer
+#### Status
+Not started
+
+#### Vague thoughts
 Free text editor, with some cleverness?
 Paste in existing recipes and have them interpreted?
 
-### Rendering
-Possibly the simplest part? But technology! Options:
-1. Cljs render with reagent/react components?
-2. Js render by parsing JSON and creating html -> setInnerHtml?
-3. Js render by creating document element objects?
+### 2. Renderer
+#### Status
+An initial prototype has been completed.
+The next step is to create a publicly viewable demonstration page.
 
-### Library
+### 3. Library
+#### Status
+There is 1 recipe in this git repo at:
+`library/lemoncake.json`
+#### Long term plan / vague thoughts
 1. initially in a git repo
 2. can create a web interface that loads all the recipes straight from a github repo over http into memory
    1. how scalable is this? 100 recipes should be absolutely fine. 1000, probably fine. 10,000...? 
