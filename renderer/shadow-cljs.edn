@@ -1,0 +1,7 @@
+{:dependencies []
+ :deps         {:aliases [:dev]}
+ :nrepl        {:port 9000}
+ :dev-http     {8080 "public"}
+ :builds       {:library {:target   :browser
+                          :modules  {:main {:entries [recipes]}}
+                          :devtools {:after-load recipes/reloaded}}}}
