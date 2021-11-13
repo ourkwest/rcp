@@ -4,4 +4,4 @@
  :dev-http     {8080 "public"}
  :builds       {:library {:target   :browser
                           :modules  {:main {:entries [recipes]}}
-                          :devtools {:after-load recipes/reloaded}}}}
+                          :devtools {:after-load recipes/dev-reload}}}}

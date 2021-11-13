@@ -128,13 +128,20 @@
                    [(node "h4" [(text "Notes")])
                     (node "span" [(text notes)])]))])))
 
-(defn displayRecipe [recipe-url element-id]
-  (GET recipe-url
-       (fn [recipe-str]
-         (let [holder (.getElementById js/document element-id)
-               recipe (js->clj (.parse js/JSON recipe-str))]
-           (.appendChild holder (renderRecipe recipe recipe-url))))))
+(defn ^:export renderFromJSON [recipe-json callback url]
+  (callback (renderRecipe (js->clj recipe-json) url)))
 
-(defn reloaded []
-  (set! (.-textContent (.getElementById js/document "recipeHolder")) "")
-  (displayRecipe "lemoncake.json" "recipeHolder"))
+(defn ^:export renderFromString [recipe-string callback url]
+  (renderFromJSON (.parse js/JSON recipe-string) callback url))
+
+(defn ^:export renderFromUrl [recipe-url callback]
+  (GET recipe-url #(renderFromString % callback recipe-url)))
+
+(defn ^:export mount [element-id clear-before-append]
+  (fn [rendered-recipe-node]
+    (let [holder (.getElementById js/document element-id)]
+      (when clear-before-append (set! (.-textContent holder) ""))
+      (.appendChild holder rendered-recipe-node))))
+
+(defn dev-reload []
+  (renderFromUrl "lemoncake.json" (mount "recipeHolder" true)))
