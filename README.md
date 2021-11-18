@@ -28,7 +28,10 @@ Paste in existing recipes and have them interpreted?
 ### 2. Renderer
 #### Status
 An initial prototype has been completed.
-The next step is to create a publicly viewable demonstration page.
+A demonstration page is viewable at [https://ourkwest.github.io/rcp](https://ourkwest.github.io/rcp) 
+
+TODO:
+   Improve layout on mobile devices
 
 ### 3. Library
 #### Status
