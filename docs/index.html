@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Recipe Conformity Project</title>
+    <script src="https://ourkwest.s3.amazonaws.com/public/rcp/rcp-lib.js"></script>
 </head>
 <body>
 
-Hello World!
+<h1>Recipe Conformity Project</h1>
+
+<div>
+    <h2>Sample recipe:</h2>
+    <div id="sampleRecipeHolder"></div>
+</div>
+
+<script>
+    recipes.renderFromUrl(
+        'https://raw.githubusercontent.com/ourkwest/rcp/main/library/lemoncake.json',
+        recipes.mount('sampleRecipeHolder')
+    );
+</script>
 
 </body>
 </html>
