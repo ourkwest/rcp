@@ -11,21 +11,26 @@
     "5": "A Blender",
     "6": "A Mixing Bowl",
     "7": "Baking Paper",
-    "8": "A Bread Knife"
+    "8": "A Bread Knife",
+    "9": "A Small Knife",
+    "10": "A Pestle & Mortar"
   },
   "ingredients": {
     "1": ["Lemon", 1],
     "2": "Icing Sugar",
     "3": ["Vegetable Oil", 100, "ml"],
-    "4": ["Water", 100, "ml"],
+    "4": ["Water", 50, "ml"],
     "5": ["Self-Raising Flour", 275, "g"],
     "6": ["Caster Sugar", 250, "g"],
-    "7": ["Baking Powder", 1, "heaped tsp"]
+    "7": ["Baking Powder", 1, "tsp"],
+    "8": ["Ginger", "1/2", "tsp"],
+    "9": ["Cardamom", "6", "pods worth of"]
   },
   "method": {
+    "10": ["The Cardamom", "Split open", ["i9"], "with", ["e9"], "and grind in", ["e10"]],
     "2": ["The Icing", "Put", ["m9a"], "in", ["e3"], "and mix in", ["i2"], "with", ["e4"], "until it forms a stiff icing."],
     "3": ["The Liquid", "Blend", ["m9b"], ["i4"], ["i3"], "together using", ["e5"]],
-    "4": ["The Dry Ingredients", "Mix", ["i5"], ["i6"], ["i7"], "in", ["e6"]],
+    "4": ["The Dry Ingredients", "Mix", ["i5"], ["i6"], ["i7"], ["i8"], ["m10"], "in", ["e6"]],
     "5": ["The Mixture", "Combine", ["m3"], ["m4"]],
     "6": ["The Lined Tin", "Line", ["e1"], "with", ["e7"]],
     "7": ["The Cake", "Transfer", ["m5"],"to", ["m6"], "and bake in", ["e2"], "for 35 minutes at 180°C."],
