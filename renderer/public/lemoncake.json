@@ -1,9 +1,8 @@
 {
   "meta": {
     "version": "0",
-    "link": "url: page describing the format and linking to the project"
+    "link": "https://github.com/ourkwest/rcp"
   },
-  "parents": ["url", "url"],
   "equipment": {
     "1": "A Loaf Tin",
     "2": "A Fan Oven",
@@ -12,27 +11,32 @@
     "5": "A Blender",
     "6": "A Mixing Bowl",
     "7": "Baking Paper",
-    "8": "A Bread Knife"
+    "8": "A Bread Knife",
+    "9": "A Small Knife",
+    "10": "A Pestle & Mortar"
   },
   "ingredients": {
     "1": ["Lemon", 1],
     "2": "Icing Sugar",
     "3": ["Vegetable Oil", 100, "ml"],
-    "4": ["Water", 100, "ml"],
+    "4": ["Water", 50, "ml"],
     "5": ["Self-Raising Flour", 275, "g"],
     "6": ["Caster Sugar", 250, "g"],
-    "7": ["Baking Powder", 1, "heaped tsp"]
+    "7": ["Baking Powder", 1, "tsp"],
+    "8": ["Ginger", "1/2", "tsp"],
+    "9": ["Cardamom", 6, "pods"]
   },
   "method": {
-    "2": ["The Icing", "Mix", ["m9a"], "and", ["i2"], "in", ["e3"], "with", ["e4"], "until smooth."],
-    "3": ["The Liquid", "Blend", ["m9b"], ["i4"], ["i3"], "together using", ["e5"]],
-    "4": ["The Dry Ingredients", "Mix", ["i5"], ["i6"], ["i7"], "in", ["e6"]],
-    "5": ["The Mixture", "Combine", ["m3"], ["m4"]],
-    "6": ["The Lined Tin", "Line", ["e1"], "with", ["e7"]],
-    "7": ["The Cake", "Transfer", ["m5"],"to", ["m6"], "and bake in", ["e2"], "for 35 minutes at 180°C."],
-    "0": ["The Cooled Cake", "Allow", ["m7"],"to cool."],
-    "9": [{"a": "The Lemon Juice", "b": "The Rest of The Lemon"}, "Halve", ["i1"], "and juice half of it, keeping the rind."],
-    "8": ["Rachel's Vegan Lemon Cake", "Slice", ["m0"], "in half horizontally with", ["e8"], "and ice through the middle with", ["m2"]]
+    "10": ["The Cardamom", "Split open", ["i.9"], "with", ["e.9"], "and grind in", ["e.10"]],
+    "2": ["The Icing", "Put", ["m.9.a"], "in", ["e.3"], "and mix in", ["i.2"], "with", ["e.4"], "until it forms a stiff icing."],
+    "3": ["The Liquid", "Blend", ["m.9.b"], ["i.4"], ["i.3"], "together using", ["e.5"]],
+    "4": ["The Dry Ingredients", "Mix", ["i.5"], ["i.6"], ["i.7"], ["i.8"], ["m.10"], "in", ["e.6"]],
+    "5": ["The Mixture", "Combine", ["m.3"], ["m.4"]],
+    "6": ["The Lined Tin", "Line", ["e.1"], "with", ["e.7"]],
+    "7": ["The Cake", "Transfer", ["m.5"],"to", ["m.6"], "and bake in", ["e.2"], "for 35 minutes at 180°C."],
+    "0": ["The Cooled Cake", "Allow", ["m.7"],"to cool."],
+    "9": [{"a": "The Lemon Juice", "b": "The Rest of The Lemon"}, "Halve", ["i.1"], "and juice half of it, keeping the rind."],
+    "8": ["Rachel's Vegan Lemon Cake", "Slice", ["m.0"], "in half horizontally with", ["e.8"], "and ice through the middle with", ["m.2"]]
   },
   "notes": "The recipe is experimental. If the lemon is large the mixture may be too wet.",
   "pictures": {"The completed cake": "url", "In progress cake": "url-2"},

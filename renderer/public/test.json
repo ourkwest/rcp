@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "version": "0",
+    "link": "https://github.com/ourkwest/rcp"
+  },
+  "equipment": {
+    "1": "A Loaf Tin",
+    "2": "A Fan Oven",
+    "3": "A Small Bowl",
+    "4": "A Spoon",
+    "5": "A Blender",
+    "6": "A Mixing Bowl",
+    "7": "Baking Paper",
+    "8": "A Bread Knife",
+    "9": "A Small Knife",
+    "10": "A Pestle & Mortar"
+  },
+  "ingredients": {
+    "1": ["Lemon", 1],
+    "2": "Icing Sugar",
+    "3": ["Vegetable Oil", 100, "ml"],
+    "4": ["Water", 50, "ml"],
+    "5": ["Self-Raising Flour", 275, "g"],
+    "6": ["Caster Sugar", 250, "g"],
+    "7": ["Baking Powder", 1, "tsp"],
+    "8": ["Ginger", "1/2", "tsp"],
+    "9": ["Cardamom", 6, "pods worth of"]
+  },
+  "method": {
+    "0": {
+      "text": ["Allow", ["method", "7"], "to cool."],
+      "deps": [["method", "7"]],
+      "desc": "The Cooled Cake",
+      "level": 8
+    },
+    "2": {
+      "text": [
+        "Put", ["method", "9", "a"], "in", ["equipment", "3"], "and mix in", ["ingredients", "2"],
+        "with", ["equipment", "4"], "until it forms a stiff icing."
+      ],
+      "deps": [
+        ["method", "9", "a"],
+        ["equipment", "3"],
+        ["ingredients", "2"],
+        ["equipment", "4"]
+      ],
+      "desc": "The Icing",
+      "level": 4
+    },
+    "3": {
+      "text": ["Blend", ["method", "9", "b"], ["ingredients", "4"], ["ingredients", "3"], "together using", ["equipment", "5"]],
+      "deps": [["method", "9", "b"], ["ingredients", "4"], ["ingredients", "3"], ["equipment", "5"]],
+      "desc": "The Liquid",
+      "level": 5
+    },
+    "4": {
+      "text": ["Mix", ["ingredients", "5"], ["ingredients", "6"], ["ingredients", "7"], ["ingredients", "8"], ["method", "10"], "in", ["equipment", "6"]],
+      "deps": [["ingredients", "5"], ["ingredients", "6"], ["ingredients", "7"], ["ingredients", "8"], ["method", "10"], ["equipment", "6"]],
+      "desc": "The Dry Ingredients",
+      "level": 1
+    },
+    "5": {
+      "text": ["Combine", ["method", "3"], ["method", "4"]],
+      "deps": [["method", "3"], ["method", "4"]],
+      "desc": "The Mixture",
+      "level": 6
+    },
+    "6": {
+      "text": ["Line", ["equipment", "1"], "with", ["equipment", "7"]],
+      "deps": [["equipment", "1"], ["equipment", "7"]],
+      "desc": "The Lined Tin",
+      "level": 2
+    },
+    "7": {
+      "text": ["Transfer", ["method", "5"], "to", ["method", "6"], "and bake in", ["equipment", "2"], "for 35 minutes at 180°C."],
+      "deps": [["method", "5"], ["method", "6"], ["equipment", "2"]],
+      "desc": "The Cake",
+      "level": 7
+    },
+    "8": {
+      "text": ["Slice", ["method", "0"], "in half horizontally with", ["equipment", "8"], "and ice through the middle with", ["method", "2"]],
+      "deps": [["method", "0"], ["equipment", "8"], ["method", "2"]],
+      "desc": "Rachel's Vegan Lemon Cake",
+      "level": 9
+    },
+    "9": {
+      "text": ["Halve", ["ingredients", "1"], "and juice half of it, keeping the rind."],
+      "deps": [["ingredients", "1"]],
+      "a": {"desc": "The Lemon Juice"},
+      "b": {"desc": "The Rest of The Lemon"},
+      "level": 3
+    },
+    "10": {
+      "text": ["Split open", ["ingredients", "9"], "with", ["equipment", "9"], "and grind in", ["equipment", "10"]],
+      "deps": [["ingredients", "9"], ["equipment", "9"], ["equipment", "10"]],
+      "desc": "The Cardamom",
+      "level": 0
+    }
+  },
+  "notes": "The recipe is experimental. If the lemon is large the mixture may be too wet.",
+  "pictures": {
+    "The completed cake": "url",
+    "In progress cake": "url-2"
+  },
+  "Comments that are not intended to be interpreted as part of this example": [
+    "How could you extract timings from this? - Could assume 3 minutes per step (configurable), plus any specific times mentioned e.g. bake for 30 mins, knead for 15 mins. Maybe 2 minutes per ingredient to weigh it out? Are children helping you?",
+    "How many portions does it provide? - could estimate weight of finished item from weight of ingredients, would need to know likely portion size given style of item (i.e. a slice of cake is smaller than a main meal)",
+    "Could you derive nutritional information from it? - would have to assume quantity of icing sugar, would need external knowledge of ingredients",
+    "Could you extract required techniques from this recipe? - perhaps just a word search on the rendered recipe? 'bake', 'fold', 'stiff peaks' etc."
+  ]
+}

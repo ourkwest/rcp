@@ -46,9 +46,18 @@
            (node "ol" (for [[_ v] m]
                         (node "li" [(text (f v))])))])))
 
+(defn split [text]
+  (loop [input text
+         output []]
+    (let [i (.indexOf input ".")]
+      (if (= i -1)
+        (conj output input)
+        (recur (subs input (inc i))
+               (conj output (subs input 0 i)))))))
+
 (defn parse-dep [path]
   (if (vector? path)
-    (let [[[t n a]] path]
+    (let [[t n a] (split (first path))]
       (cond-> [({"m" "method"
                  "i" "ingredients"
                  "e" "equipment"} t) n]
@@ -80,7 +89,7 @@
                                    (= "method" (first %))
                                    (get-in unlevelled-steps (rest %))))
                         seq))
-                 unlevelled-steps)))
+                 (sort-by key unlevelled-steps))))
 
 (defn level-steps [method]
   (loop [unlevelled-steps (map-vals method parse-step)
@@ -114,6 +123,7 @@
         steps (sort-by :level (vals (recipe "method")))
         final-step (last steps)
         notes (recipe "notes")]
+    (println (.stringify js/JSON (clj->js recipe)))
     (node "div"
           [(node "h3" [(if recipe-url
                          (node "a" {"href" recipe-url} [(text (:desc final-step))])
@@ -145,3 +155,11 @@
 
 (defn dev-reload []
   (renderFromUrl "lemoncake.json" (mount "recipeHolder" true)))
+
+; TODO:
+;  optionally remove quantities from ingredients in method
+;  add 'of' to ingredients iff they have a unit
+;  translate fractional numbers? should they be stored as strings? ???! possibly just special cases for them
+;   1/2, 1/2,3,4,5,6,n? up to 10?
+;   read in as strings, print doubles out as fractions if they are close to those fractions
+;  would we ever want to express a fraction of the output of a step? could we just use words for that? (yes, probably!)

@@ -4,4 +4,5 @@
  :dev-http     {8080 "public"}
  :builds       {:library {:target   :browser
                           :modules  {:main {:entries [recipes]}}
-                          :devtools {:after-load recipes/dev-reload}}}}
+                          :devtools {:after-load recipes/dev-reload
+                                     :open-file-command ["idea" :pwd "--line" :line :file]}}}}
